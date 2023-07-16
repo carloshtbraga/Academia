@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista</title>
+</head>
+<body>
+    {% for academia in academias %}
+    <h2>{{ academia.nome }}</h2>
+    <p>{{ academia.endereco }}</p>
+    <p>{{ academia.telefone }}</p>
+    <img src="{{ academia.foto }}" alt="Foto da academia">
+{% endfor %}
+
+</body>
+</html>
