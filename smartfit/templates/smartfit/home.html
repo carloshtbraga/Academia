@@ -1,17 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-</head>
-<body>
-    <form action="{% url 'processa_formulario' %}" method="POST">
-        {% csrf_token %}
-  
-            {{ form }}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        img {
+            width: 100px;
+        }
 
-        <input type="submit" value="Enviar">
-    </form>
+        th {
+            font-size: 20px;
+            text-align: center;
+        }
+
+        body {
+            background-color: lightgrey;
+        }
+
+        .custom-form {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: rgb(80,80,80);
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .custom-form label {
+            font-weight: bold;
+            font-size: 20px;
+            color: #fff;
+        }
+
+        .custom-form input[type="text"],
+        .custom-form input[type="tel"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .custom-form .btn-success {
+            display: block;
+            width: 100%;
+            padding: 10px;
+        }
+
+        .navbar-brand img {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+            margin-right: 10px;
+        }
+
+        a{
+            margin-left: 30px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="bg-dark py-3">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+          <div class="container">
+            <img src="https://seeklogo.com/images/T/top-fit-academia-logo-2E965040AC-seeklogo.com.png" alt="Foto da academia" class="img-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="{% url 'lista_academias' %}">Lista de Academias</a>
+                </li>
+                
+                <!-- Add more menu items here -->
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
+    <div class="container">
+        <form action="{% url 'processa_formulario' %}" method="POST" class="custom-form mt-5">
+            {% csrf_token %}
+
+            <div class="mb-3">
+                <label for="id_nome" class="form-label">Nome:</label>
+                {{ form.nome }}
+            </div>
+
+            <div class="mb-3">
+                <label for="id_endereco" class="form-label">Endereço:</label>
+                {{ form.endereco }}
+            </div>
+
+            <div class="mb-3">
+                <label for="id_telefone" class="form-label">Telefone:</label>
+                {{ form.telefone }}
+            </div>
+
+            <div class="mb-3">
+                <label for="id_foto" class="form-label">Foto:</label>
+                {{ form.foto }}
+            </div>
+            <br>  <br>
+            <button type="submit" class="btn btn-success">Enviar</button>
+        </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-B0q+XQ4d56LYYh/fbq/6vmgj75f1GW4nqLJe4JHPT+ZwR8YbJcN2eu05e6D6mqEL"
+        crossorigin="anonymous"></script>
 </body>
+
 </html>
