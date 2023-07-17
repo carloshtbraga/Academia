@@ -22,15 +22,12 @@
             text-decoration: none;
         }
 
-        h1{
+       
+            h1{
             text-align: center;
             margin-top: 100px;
-            font-size: 50px;}
-
-            h2{
-            text-align: center;
-            margin-top: 100px;
-            font-size: 30px;           
+            font-size: 30px;
+            color: gray       
         
         }
     </style>
@@ -47,6 +44,9 @@
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url 'lista_academias' %}">Lista de Alunos</a>
+              </li>
             <!-- Add more menu items here -->
           </ul>
         </div>
@@ -54,7 +54,20 @@
     </nav>
   </header>
 <body>
+    <br><br><br>
     <h1> Você foi cadastrado com sucesso</h1>
-    <a href="{% url 'lista_academias' %}"><h2>Ir para a lista de academias.</h2></a>
+
+
+    <br><br>
+    <footer class="bg-dark text-center text-lg-start" style="position: fixed; bottom: 0; width: 100%;">
+        <div class="text-center p-3 text-light" style="background-color: #212529;">
+            © 2023 Copyright
+            <a class="text-light" href="https://portf-lio-react-red.vercel.app/">Carlos Tonini</a>
+        </div>
+    </footer>
+    
+    
+    
+    
 </body>
 </html>

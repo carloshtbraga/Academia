@@ -46,8 +46,9 @@
 
         .custom-form .btn-success {
             display: block;
-            width: 100%;
+            width: 50%;
             padding: 10px;
+            margin: 0 auto;
         }
 
         .navbar-brand img {
@@ -60,6 +61,7 @@
         a{
             margin-left: 30px;
             font-size: 20px;
+            text-decoration: none;
         }
     </style>
 </head>
@@ -78,7 +80,7 @@
                     <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
                   </li>
                 <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="{% url 'lista_academias' %}">Lista de Academias</a>
+                  <a class="nav-link active" aria-current="page" href="{% url 'lista_academias' %}">Lista de Alunos</a>
                 </li>
                 
                 <!-- Add more menu items here -->
@@ -90,7 +92,8 @@
     <div class="container">
         <form action="{% url 'processa_formulario' %}" method="POST" class="custom-form mt-5">
             {% csrf_token %}
-
+            <h1 class="text-center text-white">Cadastro de Aluno</h1>
+            <br>
             <div class="mb-3">
                 <label for="id_nome" class="form-label">Nome:</label>
                 {{ form.nome }}
@@ -105,18 +108,34 @@
                 <label for="id_telefone" class="form-label">Telefone:</label>
                 {{ form.telefone }}
             </div>
-
             <div class="mb-3">
                 <label for="id_foto" class="form-label">Foto:</label>
                 {{ form.foto }}
             </div>
-            <br>  <br>
+            <div class="mb-3">
+                <label for="id_foto" class="form-label">Plano:</label>
+                {{ form.plano }}
+            </div>
+            <div class="mb-3">
+                <label for="id_foto" class="form-label">Nascimento:</label>
+                {{ form.nascimento }}
+            </div>
+
+            <br>
             <button type="submit" class="btn btn-success">Enviar</button>
         </form>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-B0q+XQ4d56LYYh/fbq/6vmgj75f1GW4nqLJe4JHPT+ZwR8YbJcN2eu05e6D6mqEL"
         crossorigin="anonymous"></script>
+        <br><br>
+        <footer class="bg-dark text-center text-lg-start" style="width: 100%;">
+            <div class="text-center p-3 text-light" style="background-color: #212529;">
+                © 2023 Copyright
+                <a class="text-light" href="https://portf-lio-react-red.vercel.app/">Carlos Tonini</a>
+            </div>
+        </footer>
+        
 </body>
 
 </html>
