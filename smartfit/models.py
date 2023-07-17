@@ -16,6 +16,7 @@ class Academia(models.Model):
         max_length=10, choices=PLANO_CHOICES, default="Mensal"
     )
     nascimento = models.DateField(blank=True, null=True)
+    data_cadastro = models.DateField(auto_now_add=True, )
     foto = models.CharField(max_length=300, default="")
 
     def __str__(self):
